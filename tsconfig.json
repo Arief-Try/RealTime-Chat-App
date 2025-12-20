@@ -1,7 +1,12 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. 
+https://console.cloud.google.com/apis/credentials?project=ng-chat-481714
+
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "$schema": "https://json.schemastore.org/tsconfig.json",
   "compileOnSave": false,
   "compilerOptions": {
+    "skipLibCheck": true,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
