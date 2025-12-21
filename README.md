@@ -1,10 +1,10 @@
 # Realtime Chat App with Angular & Supabase
 
 ## Student Details
-* **Name:** [Your Full Name Here]
-* **Student ID:** [Your Student ID Here]
-* **Group:** [Your Group Number]
-* **Lecturer:** [Your Lecturer's Name]
+* **Name:** ARIEF HAIDARIEY BIN AHMAD NASRI
+* **Student ID:** 2024272526
+* **Group:** T5CDCS2703B
+* **Lecturer:** SIR MUHAMMAD ATIF RAMLAN
 
 ## Project Background
 This project is a real-time chat application built using **Angular 17+** and **Supabase**. The goal was to understand modern web development practices, specifically:
