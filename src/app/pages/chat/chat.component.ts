@@ -1,13 +1,16 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ChatService } from '../../supabase/chat.service';
+import { Ichat } from '../../interface/chat-response';
+import { DatePipe } from '@angular/common';
+import { DeleteModalComponent } from '../../layout/delete-modal/delete-modal.component';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, DatePipe, DeleteModalComponent],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.css'
 })
@@ -16,6 +19,7 @@ private auth = inject(AuthService);
 private chat_service = inject(ChatService);
 private router = inject(Router);
 private fb = inject(FormBuilder);
+chats = signal<Ichat[]>([]);
 chatForm!: FormGroup
 
 constructor() {
@@ -43,6 +47,7 @@ onSubmit() {
   this.chat_service.chatMessage(formValue).then((res) => {
     console.log(res);
     this.chatForm.reset();
+    this.onListChat();
 }).catch((error) => {
     alert(error.message);
 })
@@ -50,10 +55,23 @@ onSubmit() {
 }
 
 onListChat() {
-  this.chat_service.listChat().then((res) => {
+  this.chat_service.listChat().then((res: Ichat[] | null) => {
     console.log(res);
-  }).catch((error) => {
+    if (res !== null) {
+      this.chats.set(res);
+    } else {
+      console.log('No messages found');
+    }
+    
+  })
+  .catch((error) => {
     alert(error.message);
   });
 }
+
+  openDropDown(msg: Ichat) {
+    console.log(msg);
+    this.chat_service.selectedChats(msg);
+    }
+
 }
