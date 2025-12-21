@@ -1,3 +1,33 @@
+# Realtime Chat App with Angular & Supabase
+
+## Student Details
+* **Name:** [Your Full Name Here]
+* **Student ID:** [Your Student ID Here]
+* **Group:** [Your Group Number]
+* **Lecturer:** [Your Lecturer's Name]
+
+## Project Background
+This project is a real-time chat application built using **Angular 17+** and **Supabase**. The goal was to understand modern web development practices, specifically:
+* **Authentication:** Secure Google Sign-In using Supabase Auth.
+* **State Management:** Using Angular Signals for reactive data updates.
+* **Real-time Database:** Syncing chat messages across multiple clients instantly.
+* **Security:** Implementing Row Level Security (RLS) to protect user data.
+
+## Discussion (Lab Reflection)
+[PASTE YOUR 1000-WORD REPORT OR SUMMARY HERE]
+* **Challenges:** Discuss the issues faced (e.g., configuring TypeScript types for Node.js `Buffer` and `NodeJS` namespaces, handling Supabase auth redirect loops).
+* **Solutions:** How you fixed the `tsconfig.app.json` to include "node" types and set up the Supabase client.
+* **Learning Outcome:** Understanding how backend-as-a-service works compared to traditional backends.
+
+---
+
+## Technical Documentation & Database Setup
+
+To run this project locally, you must set up your Supabase database with the following schema.
+
+### 1. Users Table
+This table stores user profiles linked to the Supabase Auth system.
+
 <!-- ## Database Table Schema -->
 ## users table
 
