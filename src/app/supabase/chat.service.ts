@@ -43,7 +43,7 @@ export class ChatService {
   }
  }
 
- async DomElementSchemaRegistry(id: string) {
+ async deleteChat(id: string) {
   const data = await this.supabase.from('chat').delete().eq('id', id);
   
   return data;
