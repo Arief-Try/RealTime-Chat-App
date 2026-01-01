@@ -12,14 +12,51 @@ This project is a real-time chat application built using **Angular 17+** and **S
 * **State Management:** Using Angular Signals for reactive data updates.
 * **Real-time Database:** Syncing chat messages across multiple clients instantly.
 * **Security:** Implementing Row Level Security (RLS) to protect user data.
+  
 
 ## Discussion (Lab Reflection)
-[PASTE YOUR 1000-WORD REPORT OR SUMMARY HERE]
-* **Challenges:** Discuss the issues faced (e.g., configuring TypeScript types for Node.js `Buffer` and `NodeJS` namespaces, handling Supabase auth redirect loops).
-* **Solutions:** How you fixed the `tsconfig.app.json` to include "node" types and set up the Supabase client.
-* **Learning Outcome:** Understanding how backend-as-a-service works compared to traditional backends.
+
+**Main Functions**
+
+* **Secure Authentication:** 
+Integrated Google OAuth 2.0, delegating identity verification to Google and using JSON Web Tokens (JWT) for persistent sessions.
+
+* **Reactive State Management:**
+Implemented Angular Signals to handle reactive data flows, ensuring efficient UI re-renders without the overhead of manual subscription management.
+
+* **Real-time Synchronization:**
+Utilized WebSockets via Supabase Realtime to broadcast messages instantly across all connected clients.
+
+* **Database-Level Security:** 
+Configured Row Level Security (RLS) to protect data integrity, ensuring users can only manage their own profiles and messages.
+
+* **Automated Backend Logic:** 
+Developed PostgreSQL Functions and Triggers to automatically sync user profile metadata into public tables upon signup.
+
+
+**Technical Challenges & Solutions**
+
+* **TypeScript Configuration Issues:** 
+I encountered errors regarding Node.js Buffer and NodeJS namespaces. This was resolved by modifying tsconfig.app.json to explicitly include "node" types in the compiler options, allowing the Supabase client to interact correctly with the Angular environment.
+
+* **Authentication Redirect Loops:** 
+I faced issues with redirect loops when setting up the Google OAuth callback. This was solved by precisely configuring the Authorized Redirect URIs in the Google Cloud Console and ensuring the Angular Route Guard correctly identified the session state before navigating.
+
+* **Learning Outcomes**
+
+* The most valuable learning outcomes is to have the basic understanding of the flow and the efficiency of the Backend-as-a-Service (BaaS). When being compared to to traditional backends where a developer must manually build APIs, manage server scaling, and write extensive boilerplate code for authentication, Supabase allowed me to focus on frontend logic while providing robust, "out-of-the-box" security and real-time features.
+
 
 ---
+## Installation & Setup
+
+*Clone the repository: git clone
+
+*Install dependencies: npm install
+
+*Configure environment.ts with your Supabase URL and Anon Key.
+
+*Run the app: ng serve
 
 ## Technical Documentation & Database Setup
 
