@@ -3,7 +3,7 @@
 ## Student Details
 * **Name:** ARIEF HAIDARIEY BIN AHMAD NASRI
 * **Student ID:** 2024272526
-* **Group:** T5CDCS2703B
+* **Group:** CDCS2703B
 * **Lecturer:** SIR MUHAMMAD ATIF RAMLAN
 
 ## Project Background
