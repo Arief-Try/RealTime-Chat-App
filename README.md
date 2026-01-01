@@ -54,6 +54,8 @@ I faced issues with redirect loops when setting up the Google OAuth callback. Th
 * Install dependencies: npm install
 * Configure environment.ts with your Supabase URL and Anon Key.
 * Run the app: ng serve
+  
+---
 
 ## Technical Documentation & Database Setup
 
